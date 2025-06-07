@@ -28,8 +28,6 @@ I Fragments sono:
     * *Descrizione:* Fragment che mostra le piante disponibili che possono essere aggiunte al giardino. Le piante sono mostrate con delle card.
 -   **`PlantDetailFragment.kt`**:
 	- *Descrizione:* Fragment per i dettagli della pianta scelta dalla lista. Viene mostrato il nome, il nome scientifico, la descrizione, la temperatura, la luce e l'irrigazione richiesta per la pianta.
--   **`UserPlantFragment.kt`**: 
-	- *Descrizione:* Fragment per i dettagli della pianta selezionata dall'utente dal giardino. In questa schermata oltre a vedere i dettagli si può rinominare ed eliminare la pianta.
 -   **`ProfileFragment.kt`**:
 		- *Descrizione:* Fragment per mostrare il profilo dell'utente (nome, email, piante salvate), modificare la password ed effettuare il logout.
 -   **`SettingsFragment.kt`**:
@@ -41,7 +39,7 @@ Gli Adapters collegano i dati (ad esempio l'elenco delle piante) a viste dell'in
 
 -   **`PlantAdapter.kt`**:
     * *Descrizione:* Gestisce la visualizzazione dell'elenco delle piante, mostrate in `PlantListFragment`, salvate nel database che l'utente può aggiungere al suo giardino.
-    * 
+
 ### Models (Data Classes)
 
 Classi che rappresentano la struttura dei dati utilizzati nell'app.
