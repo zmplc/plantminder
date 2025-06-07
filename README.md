@@ -120,12 +120,9 @@ Grafi di navigazione
 
 ## File di Build (Gradle Scripts)
 
--   **`app/build.gradle`**:
-    * *Descrizione:* Contiene le configurazioni specifiche del modulo `app`, come `applicationId`, `minSdkVersion`, `targetSdkVersion`, `versionCode`, `versionName`, e le **dipendenze** della libreria (es. Retrofit, Room, Glide, ecc.).
--   **`build.gradle` (a livello di progetto)**:
-    * *Descrizione:* Contiene le configurazioni che si applicano a tutti i moduli del progetto, come le versioni dei plugin Gradle e i repository.
--   **`settings.gradle`**:
-    * *Descrizione:* Definisce quali moduli sono inclusi nel progetto.
+-   **`app/build.gradle`**
+-   **`build.gradle` (project level)**
+-   **`settings.gradle`**
 
 ---
 
