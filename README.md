@@ -73,18 +73,44 @@ File XML che definiscono l'interfaccia utente.
 -   **`fragment_plant_list.xml`**: Layout per `PlantListFragment`.
 -   **`fragment_plant_detail.xml`**: Layout per `PlantDetailFragment`.
 -   **`dialog_aggiungi_pianta.xml`**: Layout per il dialog `mostraDialogAggiungiPianta()`.
--   **`fragment_user_plant.xml`**: Layout per `UserPlantFragment`.
 -   **`fragment_profile.xml`**: Layout per `ProfileFragment`.
 -   **`fragment_settings.xml`**: Layout per `SettingsFragment`.
 -   **`fragment_annaffiature.xml`**: Layout per `AnnaffiatureFragment`.
+-   **`fragment_garden_plant_detail.xml`**: Layout per `GardenPlantDetailFragment`.
 
 ### Drawable (`app/src/main/res/drawable/`)
 
-Immagini, icone, e forme XML.
+Immagini, icone e forme XML.
 
--   **`ic_plant_icon.xml`**: Icona dell'app o icona generica per le piante.
--   **`ic_add.xml`**: Icona per il pulsante "aggiungi".
--   **`background_gradient.xml`**: Eventuale drawable per uno sfondo personalizzato.
+-   **`blur_background.jpg`**: Immagine sfuocata utilizzata come sfondo per `WelcomeActivity`.
+-   **`ic_add_white.xml`**: Icona per il pulsante "aggiungi".
+-   **`ic_aiuto.xml`**: Icona per il pulsante Documentazione.
+-   **`ic_arrow_back.xml`**: Icona per tornare alla schermata precedente (tema chiaro).
+-   **`ic_arrow_back_dark.xml`**: Icona per tornare alla schermata precedente (tema scuro).
+-   **`ic_arrow_forward.xml`**: Icona per passare alla schermata successiva (tema chiaro).
+-   **`ic_arrow_forward_dark.xml`**: Icona per passare alla schermata successiva (tema scuro).
+-   **`ic_calendar.xml`**: Icona calendario (tema chiaro).
+-   **`ic_calendar_dark.xml`**: Icona calendario (tema scuro).
+-   **`ic_cambiopassword.xml`**: Icona per il pulsante Cambio password.
+-   **`ic_check_circle_white.xml`**: Icona per il pulsante Annaffia pianta.
+-   **`ic_elimina.xml`**: Icona per i pulsanti eliminazione.
+-   **`ic_home.xml`**: Icona home (tema chiaro).
+-   **`ic_home_dark.xml`**: Icona home (tema scuro).
+-   **`ic_launcher_background.xml`**
+-   **`ic_launcher_foreground.xml`**
+-   **`ic_light.xml`**: Icona per campo luce in `PlantDetailFragment`.
+-   **`ic_logout.xml`**: Icona per il pulsante Logout.
+-   **`ic_modifica.xml`**: Icona per il pulsante Rinomina.
+-   **`ic_plantminder_icona_foreground.xml`**
+-   **`ic_potted_plant.xml`**: Icona potted plant (tema chiaro).
+-   **`ic_potted_plant_dark.xml`**: Icona potted plant (tema scuro).
+-   **`ic_profile.xml`**: Icona profilo (tema chiaro).
+-   **`ic_profile_dark.xml`**: Icona profilo (tema scuro).
+-   **`ic_temperature.xml`**: Icona per campo temperatura in `PlantDetailFragment`.
+-   **`ic_water.xml`**: Icona per campo annaffiatura in `PlantDetailFragment`.
+-   **`plantminder_logo.png`**: Icona Plantminder.
+-   **`rounded_button.xml`**: Forma per pulsante Inizia in `WelcomeActivity`.
+-   **`splash_screen.jpg`**: Immagine di sfondo per `SplashScreenActivity`.
 
 ### Font (`app/src/main/res/font/`)
 
