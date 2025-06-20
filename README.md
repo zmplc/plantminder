@@ -28,6 +28,10 @@ I Fragments sono:
     * *Descrizione:* Fragment che mostra le piante disponibili che possono essere aggiunte al giardino. Le piante sono mostrate con delle card.
 -   **`PlantDetailFragment.kt`**:
 	- *Descrizione:* Fragment per i dettagli della pianta scelta dalla lista. Viene mostrato il nome, il nome scientifico, la descrizione, la temperatura, la luce e l'irrigazione richiesta per la pianta.
+- **`AnnaffiatureFragment.kt`**:
+		- *Descrizione:* Fragment che mostra i dettagli delle innaffiature per le piante nel giardino dell'utente.
+- **`GardenPlantDetailFragment.kt`**:
+		- *Descrizione:* Fragment che mostra il dettaglio delle innaffiature (comprese quelle passate), i bottoni per segnare la pianta come annaffiata, rinominarla ed eliminarla.
 -   **`ProfileFragment.kt`**:
 		- *Descrizione:* Fragment per mostrare il profilo dell'utente (nome, email, piante salvate), modificare la password ed effettuare il logout.
 -   **`SettingsFragment.kt`**:
