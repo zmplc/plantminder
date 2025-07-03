@@ -43,6 +43,10 @@ Gli Adapters collegano i dati (ad esempio l'elenco delle piante) a viste dell'in
 
 -   **`PlantAdapter.kt`**:
     * *Descrizione:* Gestisce la visualizzazione dell'elenco delle piante, mostrate in `PlantListFragment`, salvate nel database che l'utente può aggiungere al suo giardino.
+-   **`GardenPlantsAdapter.kt`**:
+    * *Descrizione:*
+-   **`AnnaffiatureAdapter.kt`**:
+    * *Descrizione:*
 
 ### Models (Data Classes)
 
@@ -52,6 +56,8 @@ Classi che rappresentano la struttura dei dati utilizzati nell'app.
     * *Descrizione:* Classe dati per le piante (id, nome, nomeScientifico, descrizione, tipo, temperatura, luce, acqua).
 -   **`GardenPlant.kt`**:
     * *Descrizione:* Classe dati per le piante salvate dall'utente  (id, nomePersonalizzato, nome).
+-   **`InforInnaffiatura.kt`**:
+    * *Descrizione:*
 
 ### ViewModels
 
@@ -79,7 +85,6 @@ File XML che definiscono l'interfaccia utente.
 -   **`dialog_aggiungi_pianta.xml`**: Layout per il dialog `mostraDialogAggiungiPianta()`.
 -   **`fragment_profile.xml`**: Layout per `ProfileFragment`.
 -   **`fragment_settings.xml`**: Layout per `SettingsFragment`.
--   **`fragment_annaffiature.xml`**: Layout per `AnnaffiatureFragment`.
 -   **`fragment_garden_plant_detail.xml`**: Layout per `GardenPlantDetailFragment`.
 
 ### Drawable (`app/src/main/res/drawable/`)
@@ -115,6 +120,10 @@ Immagini, icone e forme XML.
 -   **`plantminder_logo.png`**: Icona Plantminder.
 -   **`rounded_button.xml`**: Forma per pulsante Inizia in `WelcomeActivity`.
 -   **`splash_screen.jpg`**: Immagine di sfondo per `SplashScreenActivity`.
+-   **`status_circle.xml`**: Pallino per stato annaffiautra della pianta (mai annaffiata).
+-   **`status_circle_blue.xml`**: Pallino per stato annaffiautra della pianta (da annaffiare).
+-   **`status_circle_green.xml`**: Pallino per stato annaffiautra della pianta (annaffiata).
+-   **`status_circle_red.xml`**: Pallino per stato annaffiautra della pianta (non annaffiata/in ritardo).
 
 ### Font (`app/src/main/res/font/`)
 
