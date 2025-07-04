@@ -54,8 +54,8 @@ Classi che rappresentano la struttura dei dati utilizzati nell'app.
     * *Descrizione:* Classe dati per le piante (id, nome, nomeScientifico, descrizione, tipo, temperatura, luce, acqua).
 -   **`GardenPlant.kt`**:
     * *Descrizione:* Classe dati per le piante salvate dall'utente  (id, nomePersonalizzato, nome).
--   **`InforInnaffiatura.kt`**:
-    * *Descrizione:*
+-   **`InfoInnaffiatura.kt`**:
+    * *Descrizione:* Classe dati per gestire le annaffiature.
 
 ### ViewModels
 
