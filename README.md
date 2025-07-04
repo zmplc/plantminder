@@ -28,7 +28,7 @@ I Fragments sono:
     * *Descrizione:* Fragment che mostra le piante disponibili che possono essere aggiunte al giardino. Le piante sono mostrate con delle card.
 -   **`PlantDetailFragment.kt`**:
     * *Descrizione:* Fragment per i dettagli della pianta scelta dalla lista. Viene mostrato il nome, il nome scientifico, la descrizione, la temperatura, la luce e l'irrigazione richiesta per la pianta.
-- **`GardenPlantDetailFragment.kt`**:
+-   **`GardenPlantDetailFragment.kt`**:
     * *Descrizione:* Fragment che mostra il dettaglio delle innaffiature (comprese quelle passate), i bottoni per segnare la pianta come annaffiata, rinominarla ed eliminarla.
 -   **`ProfileFragment.kt`**:
     * *Descrizione:* Fragment per mostrare il profilo dell'utente (nome, email, piante salvate), modificare la password ed effettuare il logout.
@@ -42,9 +42,9 @@ Gli Adapters collegano i dati (ad esempio l'elenco delle piante) a viste dell'in
 -   **`PlantAdapter.kt`**:
     * *Descrizione:* Gestisce la visualizzazione dell'elenco delle piante, mostrate in `PlantListFragment`, salvate nel database che l'utente può aggiungere al suo giardino.
 -   **`GardenPlantsAdapter.kt`**:
-    * *Descrizione:*
+    * *Descrizione:* Gestisce la visualizzazione dell'elenco delle piante, mostrate in `HomeFragment`, salvate nel giardino dell'utente.
 -   **`AnnaffiatureAdapter.kt`**:
-    * *Descrizione:*
+    * *Descrizione:* Gestisce la visualizzazione dell'elenco delle piante, mostrate in `InnaffiatureFragment`, salvate nel giardino dell'utente.
 
 ### Models (Data Classes)
 
