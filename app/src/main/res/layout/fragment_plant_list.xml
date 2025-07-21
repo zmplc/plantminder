@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.zmplc.plantminder.PlantListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <!-- Titolo -->
+        <TextView
+            android:id="@+id/pianteTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Piante"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- ChipGroup per filtri -->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/filtroPianteChipGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:paddingHorizontal="4dp"
+            app:singleSelection="true"
+            app:selectionRequired="false"
+            app:layout_constraintTop_toBottomOf="@id/pianteTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/aromatiche"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="Aromatiche"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/verde" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ortaggi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="Ortaggi"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/verde" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/fiori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="Fiori"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/verde" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Lista RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/plantRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/filtroPianteChipGroup"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_plant" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

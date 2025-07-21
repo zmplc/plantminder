@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="nome"
+            type="String" />
+
+        <variable
+            name="viewModel"
+            type="com.zmplc.plantminder.GardenViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <!-- Saluto utente -->
+        <TextView
+            android:id="@+id/salutoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`Ciao, ` + nome}"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Le tue piante -->
+        <TextView
+            android:id="@+id/leTuePianteTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Le tue piante"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/salutoTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="18dp" />
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listaPianteRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_garden_plant"
+            app:layout_constraintTop_toBottomOf="@id/leTuePianteTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Testo "nessuna pianta" quando non ci sono piante nel giardino -->
+        <TextView
+            android:id="@+id/nessunaPiantaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nessuna pianta nel tuo giardino.\nAggiungine una!"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/leTuePianteTextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

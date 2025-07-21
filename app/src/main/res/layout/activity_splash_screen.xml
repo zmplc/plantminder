@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Immagine sfondo per splash screen -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/splash_screen"
+        android:contentDescription="Immagine di background"
+        android:scaleType="centerCrop" />
+
+    <!-- Logo Plantminder -->
+    <ImageView
+        android:id="@+id/logoPlantminder"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/plantminder_logo"
+        android:contentDescription="Plantminder Logo"
+        android:layout_centerInParent="true"/>
+
+    <!-- Nome app -->
+    <TextView
+        android:id="@+id/plantminderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plantminder"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_below="@id/logoPlantminder"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

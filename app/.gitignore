@@ -1,0 +1,58 @@
+# ==============================
+# Android Studio / IntelliJ
+# ==============================
+*.iml
+.gradle/
+.idea/
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# ==============================
+# Android build
+# ==============================
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# ==============================
+# Kotlin
+# ==============================
+.kotlinc/
+.kotlin/
+.kotlin_module
+.kotlin/  # esclude anche .kotlin/errors
+
+# ==============================
+# OS & Editor files
+# ==============================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.log
+*.bak
+
+# ==============================
+# Sensitive files
+# ==============================
+local.properties
+**/local.properties
+**/key.properties
+**/google-services.json
+**/google_api_key.txt
+*.jks
+*.keystore
+*.pem
+*.crt
+
+# ==============================
+# Firebase
+# ==============================
+.firebase/
+.firestore/

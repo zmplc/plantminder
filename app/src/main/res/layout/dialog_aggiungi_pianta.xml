@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/containerSteps"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Step1: posizione pianta -->
+        <LinearLayout
+            android:id="@+id/stepPosizione"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dove si trova la pianta?"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupPosizione"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/radioInCasa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In vaso, in casa" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/radioFuori"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In vaso, esterno" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/radioGiardino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Giardino, in terra" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/radioOrto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Orto (verdure)" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Step2: intervallo annaffiatura -->
+        <LinearLayout
+            android:id="@+id/stepIntervalloAnnaffiatura"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ogni quanto vuoi annaffiare la pianta?"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupAnnaffiatura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/radioIntervalloDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Intervallo default" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/radioIntervalloPersonalizzato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Intervallo personalizzato (giorni)" />
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutIntervalloPersonalizzato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Inserisci l'intervallo personalizzato"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/intervalloPersonalizzatoEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Step3: nome pianta data dall'utente -->
+        <LinearLayout
+            android:id="@+id/stepNome"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inserisci un nome per la tua pianta"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Es. Basilico balcone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nomePersonalizzatoEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal"
+            android:background="?android:windowBackground">
+
+            <TextView
+                android:id="@+id/titoloImpostazioni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Impostazioni"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Tema scuro -->
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switchTema"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tema scuro"
+                android:checked="false"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Cancella tutte le piante -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancellaPiante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="24dp"
+                android:text="Cancella tutte le piante"
+                app:icon="?attr/elimina"
+                app:iconGravity="textStart"
+                app:cornerRadius="10dp"
+                android:backgroundTint="?attr/colorError"
+                android:textColor="@android:color/white"/>
+
+            <!-- Documentazione -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDocumentazione"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="Documentazione"
+                app:icon="?attr/aiuto"
+                app:iconGravity="textStart"
+                app:cornerRadius="10dp"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

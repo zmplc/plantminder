@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Plantminder" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">#4CAF50</item>
+        <item name="colorPrimaryVariant">#388E3C</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#8BC34A</item>
+
+        <item name="colorError">#D32F2F</item>
+
+        <item name="android:fontFamily">@font/inter_variablefont</item>
+
+        <!-- Icone bottomnav + arrow back + arrow forward -->
+        <item name="home">@drawable/ic_home</item>
+        <item name="calendar">@drawable/ic_calendar</item>
+        <item name="potted_plant">@drawable/ic_potted_plant</item>
+        <item name="profile">@drawable/ic_profile</item>
+        <item name="arrow_back">@drawable/ic_arrow_back</item>
+        <item name="arrow_forward">@drawable/ic_arrow_forward</item>
+
+        <!-- Icone bottoni -->
+        <item name="modifica">@drawable/ic_modifica</item>
+        <item name="elimina">@drawable/ic_elimina</item>
+        <item name="aiuto">@drawable/ic_aiuto</item>
+        <item name="cambiopassword">@drawable/ic_cambiopassword</item>
+        <item name="logout">@drawable/ic_logout</item>
+    </style>
+
+    <style name="Theme.Plantminder" parent="Base.Theme.Plantminder" />
+</resources>

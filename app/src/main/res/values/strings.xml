@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Plantminder</string>
+
+    <!-- Icone -->
+    <attr name="home" format="reference"/>
+    <attr name="calendar" format="reference"/>
+    <attr name="potted_plant" format="reference"/>
+    <attr name="profile" format="reference"/>
+    <attr name="arrow_back" format="reference"/>
+    <attr name="arrow_forward" format="reference"/>
+    <attr name="elimina" format="reference"/>
+    <attr name="aiuto" format="reference"/>
+    <attr name="modifica" format="reference"/>
+    <attr name="cambiopassword" formato="reference"/>
+    <attr name="logout" format="reference"/>
+</resources>
