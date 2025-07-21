@@ -11,5 +11,5 @@ data class GardenPlant(
     val nome: String = "",
     val posizione: String = "",
     val intervalloAnnaffiatura: Int = 0,
-    val ultimaInnaffiatura: Date?
+    val ultimaInnaffiatura: Date? = null
 ) : Parcelable

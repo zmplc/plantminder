@@ -25,7 +25,8 @@ captures/
 .kotlinc/
 .kotlin/
 .kotlin_module
-.kotlin/  # esclude anche .kotlin/errors
+.kotlin/
+.kotlin/errors/
 
 # ==============================
 # OS & Editor files

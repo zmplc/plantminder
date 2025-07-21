@@ -34,6 +34,7 @@ class WelcomeActivity : AppCompatActivity() {
                 prefs.edit {
                     putString("USER_ID", user.uid)
                 }
+                android.util.Log.d("WelcomeActivity", "UserID salvato: ${user.uid}")
                 // Se l'email è verificata -> MainActivity
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("USER_EMAIL", user.email)

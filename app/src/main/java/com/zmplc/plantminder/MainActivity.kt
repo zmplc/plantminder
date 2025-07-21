@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -14,8 +15,10 @@ import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
 import android.Manifest
+import android.content.Context
 import androidx.core.app.ActivityCompat
 import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkRequest
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import java.util.concurrent.TimeUnit
@@ -31,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         // Applico il tema
         applySavedTheme()
 
+        Log.d("MainActivity", "onCreate chiamato")
+
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -43,6 +48,37 @@ class MainActivity : AppCompatActivity() {
             )
         }
         createNotificationChannel()
+
+        // Ogni 24 ore mando la notifica
+        // Da notare che utilizzando PeriodicWorkRequest una notifica viene mandata comunque
+        // Quindi avrò current state RUNNING e poi current state ENQUEUED
+        val request = PeriodicWorkRequestBuilder<NotificationWorker>(24, TimeUnit.HOURS)
+            .build()
+
+        WorkManager.getInstance(this).enqueueUniquePeriodicWork(
+            "daily_plantminder",                // Nome univoco del work
+            ExistingPeriodicWorkPolicy.KEEP,    // In questo modo non sovrascrivo se esiste già (evito duplicati)
+            request
+        )
+
+        // WorkManager.getInstance(this).enqueue(request) uso questo con
+        // val request = OneTimeWorkRequestBuilder<NotificationWorker>().build()
+
+        WorkManager.getInstance(this)
+            .getWorkInfoByIdLiveData(request.id)
+            .observe(this) { workInfo ->
+                if (workInfo != null && workInfo.state.isFinished) {
+                    if (workInfo.state == androidx.work.WorkInfo.State.SUCCEEDED) {
+                        Log.d("MainActivity", "Work completed successfully")
+                    } else if (workInfo.state == androidx.work.WorkInfo.State.FAILED) {
+                        Log.d("MainActivity", "Work failed")
+                    } else {
+                        Log.d("MainActivity", "Work finished with state: ${workInfo.state}")
+                    }
+                } else if (workInfo != null) {
+                    Log.d("MainActivity", "Work current state: ${workInfo.state}")
+                }
+            }
 
 
         // Imposto la Toolbar
@@ -79,17 +115,6 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
-        // Ogni 24 ore mando la notifica
-        val workRequest = PeriodicWorkRequestBuilder<NotificationWorker>(20, TimeUnit.MINUTES)
-            .build()
-        WorkManager.getInstance(this).enqueueUniquePeriodicWork(
-            "NotificationWorker",
-            ExistingPeriodicWorkPolicy.KEEP,
-            workRequest
-        )
-
-
     }
 
     private fun applySavedTheme() {
@@ -117,16 +142,27 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun createNotificationChannel() {
+    private fun createNotificationChannel() {
+        Log.d("MainActivity", "createNotificationChannel() chiamato")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name = "Plantminder Notifications"
-            val descriptionText = "Notifiche Plantminder"
+            // Create the NotificationChannel
+            val name = "Notification Channel"
+            val descriptionText = "Channel for plantminder notifications"
             val importance = NotificationManager.IMPORTANCE_HIGH
-            val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
-                description = descriptionText
+            val mChannel = NotificationChannel(CHANNEL_ID, name, importance)
+            mChannel.description = descriptionText
+            // Register the channel with the system. You can't change the importance
+            // or other notification behaviors after this.
+            val notificationManager = getSystemService(NOTIFICATION_SERVICE) as
+                    NotificationManager
+            notificationManager.createNotificationChannel(mChannel)
+
+            val checkChannel = notificationManager.getNotificationChannel(CHANNEL_ID)
+            if (checkChannel != null) {
+                Log.d("MainActivity", "Canale notifiche creato: ${checkChannel.name}")
+            } else {
+                Log.d("MainActivity", "Canale notifiche NON creato")
             }
-            val notificationManager = getSystemService(NotificationManager::class.java)
-            notificationManager.createNotificationChannel(channel)
         }
     }
 }

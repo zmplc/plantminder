@@ -17,11 +17,11 @@ class NotificationWorker(
     override suspend fun doWork(): Result {
         Log.d("NotificationWorker", "Esecuzione avvenuta: il worker è stato eseguito")
         return try {
-            val prefs = context.getSharedPreferences("settings", Context.MODE_PRIVATE)
+            val prefs = context.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
             val userId = prefs.getString("USER_ID", null)
 
             if (userId == null) {
-                Log.d("NotificationWorker", "Nessun userId trovato, esco dal worker")
+                Log.d("NotificationWorker", "Nessun userId trovato")
                 return Result.failure()
             }
 
@@ -40,6 +40,7 @@ class NotificationWorker(
                 }
             }
 
+            // Per ogni pianta mando la notifica
             pianteDaAnnaffiare.forEachIndexed { index, plant ->
                 inviaNotifica(
                     context,
@@ -61,7 +62,7 @@ class NotificationWorker(
         val notification = NotificationCompat.Builder(context, "plantminder_channel")
             .setSmallIcon(R.drawable.plantminder_logo)
             .setContentTitle("Ricordati di annaffiare \"$nomePianta\"!")
-            .setContentText("La pianta \"$nomePianta\" va annaffiata oggi!")
+            .setContentText("La pianta \"$nomePianta\" va annaffiata oggi.")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
             .build()
