@@ -7,6 +7,8 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
 import android.util.Log
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -21,7 +23,6 @@ import androidx.work.WorkRequest
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import java.util.concurrent.TimeUnit
-import androidx.work.ExistingPeriodicWorkPolicy
 import com.zmplc.plantminder.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +33,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         // Applico il tema
         applySavedTheme()
+
+        WindowCompat.setDecorFitsSystemWindows(window, true)
 
         Log.d("MainActivity", "onCreate chiamato")
 
@@ -54,14 +57,7 @@ class MainActivity : AppCompatActivity() {
         val request = PeriodicWorkRequestBuilder<NotificationWorker>(24, TimeUnit.HOURS)
             .build()
 
-        WorkManager.getInstance(this).enqueueUniquePeriodicWork(
-            "daily_plantminder",                // Nome univoco del work
-            ExistingPeriodicWorkPolicy.KEEP,    // In questo modo non sovrascrivo se esiste già (evito duplicati)
-            request
-        )
-
-        // WorkManager.getInstance(this).enqueue(request) uso questo con
-        // val request = OneTimeWorkRequestBuilder<NotificationWorker>().build()
+        WorkManager.getInstance(this).enqueue(request)
 
         WorkManager.getInstance(this)
             .getWorkInfoByIdLiveData(request.id)
