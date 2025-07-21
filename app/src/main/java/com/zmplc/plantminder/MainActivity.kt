@@ -8,7 +8,6 @@ import android.app.NotificationManager
 import android.os.Build
 import android.util.Log
 import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
