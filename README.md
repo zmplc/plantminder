@@ -1,5 +1,7 @@
 # Plantminder - Documentazione
 
+![Plantminder Logo](https://github.com/zmplc/plantminder/blob/main/app/src/main/ic_plantminder_icona-playstore.png)
+
 Questa è una breve guida ai file principali che compongono l'app android Plantminder. 
 L'obiettivo è fornire una panoramica generale della struttura del progetto e della funzionalità dell'applicazione.
 
