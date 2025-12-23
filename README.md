@@ -1,7 +1,7 @@
 # Plantminder - Documentazione
 
 <center>
-	<img src="[image-url](https://github.com/zmplc/plantminder/blob/main/app/src/main/ic_plantminder_icona-playstore.png)" alt="Plantminder Logo" style="width:50%; height:auto;">
+	<img src="https://github.com/zmplc/plantminder/blob/main/app/src/main/ic_plantminder_icona-playstore.png" alt="Plantminder Logo" style="width:50%; height:auto;">
 </center>
 
 Questa è una breve guida ai file principali che compongono l'app android Plantminder. 
