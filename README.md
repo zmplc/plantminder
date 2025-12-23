@@ -1,7 +1,7 @@
 # Plantminder - Documentazione
 
 <p align="center">
-  <img src="blob/main/app/src/main/ic_plantminder_icona-playstore.png" alt="Plantminder Logo" width="400">
+  <img src="app/src/main/ic_plantminder_icona-playstore.png" alt="Plantminder Logo" width="400">
 </p>
 
 
